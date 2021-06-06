@@ -41,14 +41,26 @@ for (let i = 0; i < questions.length; i++) {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
+let grade = 0;
+
+for (let i = 0; i < questions.length; i++) {
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+    grade +=1;
+  }
+}
+
+let overallGrade = (grade / questions.length * 100);
+console.log(`>>> Overall Grade: ${overallGrade}% (${grade} out of ${questions.length} responses correct) <<<`);
+
+if (overallGrade >= 80) {
+  console.log(">>> Status: APPROVED <<<");
+} else {
+  console.log(">>> Status: FAILED <<<");
+}
 
 
+return overallGrade;
 
-
-  let grade;
-  
-
-  return grade;
 }
 
 
